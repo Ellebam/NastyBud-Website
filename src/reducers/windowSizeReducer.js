@@ -11,5 +11,6 @@ export default (state = initialState, action) => {
         screenWidth: action.payload,
       });
   }
+
   return state;
 };

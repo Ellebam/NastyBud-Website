@@ -1,11 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { screenResize } from '../actions';
+import { screenResize, showSidebar, hideSidebar } from '../actions';
 
 class Header extends React.Component {
-  componentDidMount() {
-    console.log(this.props.screenWidth);
-  }
+  toggleSidebar = () => {
+    if (!this.props.sidebarVisible) {
+      this.props.showSidebar();
+      return;
+    }
+    this.props.hideSidebar();
+  };
+
   renderNavAreas = () => {
     return (
       <div className='ui container'>
@@ -19,7 +24,7 @@ class Header extends React.Component {
 
   renderNavMenu = () => {
     return (
-      <div className='toc item'>
+      <div onClick={() => this.toggleSidebar()} className='toc item'>
         <i className='bars icon' />
       </div>
     );
@@ -28,8 +33,9 @@ class Header extends React.Component {
   renderNavigation = () => {
     if (this.props.screenWidth > 500) {
       return this.renderNavAreas();
+    } else {
+      return this.renderNavMenu();
     }
-    return this.renderNavMenu();
   };
   render() {
     return (
@@ -47,6 +53,13 @@ class Header extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { screenWidth: state.windowSize };
+  return {
+    screenWidth: state.windowsize.screenWidth,
+    sidebarVisible: state.sidebarVisibility.sidebarVisible,
+  };
 };
-export default connect(mapStateToProps, { screenResize })(Header);
+export default connect(mapStateToProps, {
+  screenResize,
+  showSidebar,
+  hideSidebar,
+})(Header);
