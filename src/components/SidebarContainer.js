@@ -1,7 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Sidebar, Menu, Icon } from 'semantic-ui-react';
-import { hideSidebar } from '../actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVestPatches, faRibbon } from '@fortawesome/free-solid-svg-icons';
+import { faPiedPiperHat } from '@fortawesome/free-brands-svg-icons';
+import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
+import styled from 'styled-components';
 
 const SidebarContainer = ({ visible }) => {
   return (
@@ -12,15 +16,41 @@ const SidebarContainer = ({ visible }) => {
       vertical
       visible={visible}
       width='thin'
-      onHide={() => hideSidebar()}
     >
-      <div>sample text</div>
+      <Menu.Item as='a'>
+        <StyledIconDiv>
+          <FontAwesomeIcon icon={faVestPatches} size='lg' />
+        </StyledIconDiv>
+        Garments
+      </Menu.Item>
+      <Menu.Item as='a'>
+        <StyledIconDiv>
+          <FontAwesomeIcon icon={faPiedPiperHat} size='lg' />
+        </StyledIconDiv>
+        MMF
+      </Menu.Item>
+      <Menu.Item as='a'>
+        <StyledIconDiv>
+          <FontAwesomeIcon icon={faNewspaper} size='lg' />
+        </StyledIconDiv>
+        Blog
+      </Menu.Item>
+      <Menu.Item as='a'>
+        <StyledIconDiv>
+          <FontAwesomeIcon icon={faRibbon} size='lg' rotation={180} />
+        </StyledIconDiv>
+        Story
+      </Menu.Item>
     </Sidebar>
   );
 };
+
+const StyledIconDiv = styled.div`
+  margin: 2px;
+`;
 
 const mapStateToProps = (state) => {
   return { visible: state.sidebarVisibility.sidebarVisible };
 };
 
-export default connect(mapStateToProps, { hideSidebar })(SidebarContainer);
+export default connect(mapStateToProps)(SidebarContainer);

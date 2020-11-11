@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Sidebar, Segment } from 'semantic-ui-react';
 import Header from './Header';
 import SidebarContainer from './SidebarContainer';
 import { connect } from 'react-redux';
-import { hideSidebar } from '../actions';
+import { hideSidebar, showSidebar } from '../actions';
 
-const App = ({ sidebarVisible }) => {
+const App = ({ sidebarVisible, hideSidebar }) => {
   return (
-    <div>
+    <div style={{ height: '100vh' }}>
       <Sidebar.Pushable>
         <SidebarContainer />
-        <Sidebar.Pusher onClick={() => hideSidebar()} dimmed={sidebarVisible}>
+        <Sidebar.Pusher
+          onClick={() => (sidebarVisible ? hideSidebar() : {})}
+          dimmed={sidebarVisible}
+        >
           <div>
             <Header />
             <div>
@@ -31,4 +34,4 @@ const mapStateToProps = (state) => {
     sidebarVisible: state.sidebarVisibility.sidebarVisible,
   };
 };
-export default connect(mapStateToProps, { hideSidebar })(App);
+export default connect(mapStateToProps, { hideSidebar, showSidebar })(App);
