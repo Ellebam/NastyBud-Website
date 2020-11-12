@@ -2,7 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Sidebar, Menu, Icon } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVestPatches, faRibbon } from '@fortawesome/free-solid-svg-icons';
+import {
+  faVestPatches,
+  faRibbon,
+  faHome,
+} from '@fortawesome/free-solid-svg-icons';
 import { faPiedPiperHat } from '@fortawesome/free-brands-svg-icons';
 import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import styled from 'styled-components';
@@ -17,6 +21,13 @@ const SidebarContainer = ({ visible }) => {
       visible={visible}
       width='thin'
     >
+      <Menu.Item as='a'>
+        <StyledIconDiv>
+          <FontAwesomeIcon icon={faHome} size='lg' />
+        </StyledIconDiv>
+        Home
+      </Menu.Item>
+
       <Menu.Item as='a'>
         <StyledIconDiv>
           <FontAwesomeIcon icon={faVestPatches} size='lg' />
@@ -46,7 +57,7 @@ const SidebarContainer = ({ visible }) => {
 };
 
 const StyledIconDiv = styled.div`
-  margin: 2px;
+  margin-bottom: 4px;
 `;
 
 const mapStateToProps = (state) => {

@@ -14,6 +14,7 @@ class Header extends React.Component {
   renderNavAreas = () => {
     return (
       <div className='ui container'>
+        <a className=' right item'> Home</a>
         <a className=' right item'> Garments</a>
         <a className=' right item'> MMF</a>
         <a className=' right item'> Blog</a>

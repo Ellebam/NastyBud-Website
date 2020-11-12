@@ -1,34 +1,41 @@
-import React, { useEffect } from 'react';
 import { Sidebar, Segment } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
+
 import Header from './Header';
 import SidebarContainer from './SidebarContainer';
-import { connect } from 'react-redux';
 import { hideSidebar, showSidebar } from '../actions';
+import Footer from './Footer';
 
 const App = ({ sidebarVisible, hideSidebar }) => {
   return (
-    <div style={{ height: '100vh' }}>
+    <div>
       <Sidebar.Pushable>
         <SidebarContainer />
-        <Sidebar.Pusher
+        <StyledPageContainer
           onClick={() => (sidebarVisible ? hideSidebar() : {})}
           dimmed={sidebarVisible}
         >
-          <div>
+          <StyledPageContainer>
             <Header />
             <div>
               <Segment>oida</Segment>
               <Segment>oida</Segment>
               <Segment>oida</Segment>
-              <Segment>oida</Segment>
             </div>
-          </div>
-        </Sidebar.Pusher>
+            <Footer />
+          </StyledPageContainer>
+        </StyledPageContainer>
       </Sidebar.Pushable>
     </div>
   );
 };
 
+const StyledPageContainer = styled(Sidebar.Pusher)`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 const mapStateToProps = (state) => {
   return {
     sidebarVisible: state.sidebarVisibility.sidebarVisible,
