@@ -1,4 +1,4 @@
-import { Sidebar, Segment } from 'semantic-ui-react';
+import { Sidebar, Segment, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
@@ -22,9 +22,15 @@ const App = ({ sidebarVisible, hideSidebar }) => {
               <Segment>oida</Segment>
               <Segment>oida</Segment>
               <Segment>oida</Segment>
+              <Segment>
+                <Image
+                  src='../img/outerspace-52.gif'
+                  alt='gif of a moving galaxy'
+                />
+              </Segment>
             </div>
-            <Footer />
           </StyledPageContainer>
+          <Footer />
         </StyledPageContainer>
       </Sidebar.Pushable>
     </div>
@@ -32,7 +38,7 @@ const App = ({ sidebarVisible, hideSidebar }) => {
 };
 
 const StyledPageContainer = styled(Sidebar.Pusher)`
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 `;
