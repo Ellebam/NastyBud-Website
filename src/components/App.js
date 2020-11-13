@@ -6,6 +6,7 @@ import Header from './Header';
 import SidebarContainer from './SidebarContainer';
 import { hideSidebar, showSidebar } from '../actions';
 import Footer from './Footer';
+import gifz from '../img/outerspace-52.gif';
 
 const App = ({ sidebarVisible, hideSidebar }) => {
   return (
@@ -22,12 +23,7 @@ const App = ({ sidebarVisible, hideSidebar }) => {
               <Segment>oida</Segment>
               <Segment>oida</Segment>
               <Segment>oida</Segment>
-              <Segment>
-                <Image
-                  src='../img/outerspace-52.gif'
-                  alt='gif of a moving galaxy'
-                />
-              </Segment>
+              <Segment>oida</Segment>
             </div>
           </StyledPageContainer>
           <Footer />
