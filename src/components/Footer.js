@@ -4,6 +4,7 @@ import {} from '@fortawesome/free-brands-svg-icons';
 import { Segment, Container, Button, Icon } from 'semantic-ui-react';
 
 import spaceBackground from '../img/outerspace-52.gif';
+import './Footer.css';
 
 class Footer extends React.Component {
   render() {
@@ -12,16 +13,42 @@ class Footer extends React.Component {
         <div className='ui segment large' style={footerStyle}>
           <Segment vertical>
             <Container textAlign='center'>
-              <Button circular color='blue' inverted icon='instagram' />
-
-              <Button circular color='red' inverted icon='youtube' />
-              <Button circular color='teal' inverted icon='twitter' />
-              <Button circular color='yellow' inverted icon='snapchat' />
-              <Button circular color='orange' inverted icon='google plus g' />
-              <Button circular color='green' inverted icon='phone' />
-              <Button circular color='white' inverted icon='mail' />
+              <StyledBrandButton
+                circular
+                color='blue'
+                inverted
+                icon='instagram'
+              />
+              <StyledBrandButton circular color='red' inverted icon='youtube' />
+              <StyledBrandButton
+                circular
+                color='teal'
+                inverted
+                icon='twitter'
+              />
+              <StyledBrandButton
+                circular
+                color='yellow'
+                inverted
+                icon='snapchat'
+              />
+              <StyledBrandButton
+                circular
+                color='orange'
+                inverted
+                icon='google plus g'
+              />
+              <StyledBrandButton circular color='green' inverted icon='phone' />
+              <StyledBrandButton circular color='white' inverted icon='mail' />
             </Container>
-            <Icon size='massive' name='studiovinari' inverted />
+            <MainIconContainer>
+              <Icon size='huge' name='studiovinari' inverted />
+            </MainIconContainer>
+
+            <StyledParagraph>
+              {' '}
+              &copy; Ribbon <br /> Website created by Ellebam
+            </StyledParagraph>
           </Segment>
         </div>
       </StickyFooterContainer>
@@ -33,13 +60,25 @@ const StickyFooterContainer = styled.div`
   position: fixed;
   bottom: 0;
   flex: 1;
-  min-width: 100%;
+  width: 100%;
   background: #000000;
 `;
 
+const MainIconContainer = styled.div`
+  margin: 0.5em;
+`;
+
+const StyledBrandButton = styled(Button)`
+  margin: 0.3em !important;
+`;
+
+const StyledParagraph = styled.p`
+  color: #f2f2f2;
+`;
 let footerStyle = {
   backgroundImage: `url(${spaceBackground})`,
   backgroundRepeat: 'repeat - x',
   textAlign: 'center',
 };
+
 export default Footer;
