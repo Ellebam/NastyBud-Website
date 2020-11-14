@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { screenResize, showSidebar, hideSidebar } from '../actions';
+import styled from 'styled-components';
+
+import { TEXT_COLOR } from '../theme/colors';
 
 class Header extends React.Component {
   toggleSidebar = () => {
@@ -14,7 +17,7 @@ class Header extends React.Component {
   renderNavAreas = () => {
     return (
       <div className='ui container'>
-        <a className=' right item'> Home</a>
+        <a className=' right item '> Home</a>
         <a className=' right item'> Garments</a>
         <a className=' right item'> MMF</a>
         <a className=' right item'> Blog</a>
@@ -40,18 +43,25 @@ class Header extends React.Component {
   };
   render() {
     return (
-      <div className='ui container'>
-        <div className=' ui large secondary  pointing menu'>
+      <div className='ui container '>
+        <StyledHeaderArea className=' ui large secondary  pointing menu'>
           <a className='left  header item'>
             RIBBON
             <i className='studiovinari icon' />
           </a>
           {this.renderNavigation()}
-        </div>
+        </StyledHeaderArea>
       </div>
     );
   }
 }
+
+const StyledHeaderArea = styled.div`
+  & *,
+  & a {
+    color: ${TEXT_COLOR} !important;
+  }
+`;
 
 const mapStateToProps = (state) => {
   return {

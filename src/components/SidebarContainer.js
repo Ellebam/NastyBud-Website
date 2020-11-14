@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Sidebar, Menu, Icon } from 'semantic-ui-react';
+import { Sidebar, Menu } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faVestPatches,
@@ -10,6 +10,8 @@ import {
 import { faPiedPiperHat } from '@fortawesome/free-brands-svg-icons';
 import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import styled from 'styled-components';
+
+import { TEXT_COLOR } from '../theme/colors';
 
 const SidebarContainer = ({ visible }) => {
   return (
@@ -58,6 +60,7 @@ const SidebarContainer = ({ visible }) => {
 
 const StyledIconDiv = styled.div`
   margin-bottom: 4px;
+  color: ${TEXT_COLOR};
 `;
 
 const mapStateToProps = (state) => {

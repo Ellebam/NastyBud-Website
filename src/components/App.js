@@ -2,15 +2,16 @@ import { Sidebar, Segment, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
+import { hideSidebar, showSidebar } from '../actions';
+import { PRIMARY_COLOR, TEXT_COLOR } from '../theme/colors';
 import Header from './Header';
 import SidebarContainer from './SidebarContainer';
-import { hideSidebar, showSidebar } from '../actions';
 import Footer from './Footer';
-import gifz from '../img/outerspace-52.gif';
+import Opener from './content/Opener';
 
 const App = ({ sidebarVisible, hideSidebar }) => {
   return (
-    <div>
+    <StyledPageContainer>
       <Sidebar.Pushable>
         <SidebarContainer />
         <StyledPageContainer
@@ -19,17 +20,12 @@ const App = ({ sidebarVisible, hideSidebar }) => {
         >
           <StyledPageContainer>
             <Header />
-            <div>
-              <Segment>oida</Segment>
-              <Segment>oida</Segment>
-              <Segment>oida</Segment>
-              <Segment>oida</Segment>
-            </div>
+            <Opener />
           </StyledPageContainer>
           <Footer />
         </StyledPageContainer>
       </Sidebar.Pushable>
-    </div>
+    </StyledPageContainer>
   );
 };
 
@@ -37,7 +33,10 @@ const StyledPageContainer = styled(Sidebar.Pusher)`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background: ${PRIMARY_COLOR};
+  color: ${TEXT_COLOR};
 `;
+
 const mapStateToProps = (state) => {
   return {
     sidebarVisible: state.sidebarVisibility.sidebarVisible,
