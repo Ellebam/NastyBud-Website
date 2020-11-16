@@ -12,10 +12,30 @@ class Opener extends React.Component {
           src='https://picsum.photos/900/400?random=1'
         />
 
-        <Segment>oida</Segment>
-        <Segment>oida</Segment>
-        <Segment>oida</Segment>
-        <Segment>oida</Segment>
+        <Segment>Slider 1</Segment>
+        <Segment>Slider 2</Segment>
+        <Segment>Slider 3</Segment>
+        <Segment>Slider 4</Segment>
+
+        <Segment>Slider 1</Segment>
+        <Segment>Slider 2</Segment>
+        <Segment>Slider 3</Segment>
+        <Segment>Slider 4</Segment>
+
+        <Segment>Slider 1</Segment>
+        <Segment>Slider 2</Segment>
+        <Segment>Slider 3</Segment>
+        <Segment>Slider 4</Segment>
+
+        <Segment>Slider 1</Segment>
+        <Segment>Slider 2</Segment>
+        <Segment>Slider 3</Segment>
+        <Segment>Slider 4</Segment>
+
+        <Segment>Slider 1</Segment>
+        <Segment>Slider 2</Segment>
+        <Segment>Slider 3</Segment>
+        <Segment>last slider</Segment>
       </div>
     );
   }
@@ -24,4 +44,5 @@ class Opener extends React.Component {
 const StyledHeroImage = styled(Image)`
   margin-top: 0.5em;
 `;
+
 export default Opener;

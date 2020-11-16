@@ -11,30 +11,43 @@ import Opener from './content/Opener';
 
 const App = ({ sidebarVisible, hideSidebar }) => {
   return (
-    <StyledPageContainer>
+    <StyledApp>
       <Sidebar.Pushable>
         <SidebarContainer />
+
         <StyledPageContainer
           onClick={() => (sidebarVisible ? hideSidebar() : {})}
           dimmed={sidebarVisible}
         >
-          <StyledPageContainer>
-            <Header />
-            <Opener />
-          </StyledPageContainer>
+          <Header />
+          <Opener />
+          <Gapppp />
           <Footer />
         </StyledPageContainer>
       </Sidebar.Pushable>
-    </StyledPageContainer>
+    </StyledApp>
   );
 };
 
 const StyledPageContainer = styled(Sidebar.Pusher)`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  
+ 
+  
   background: ${PRIMARY_COLOR};
   color: ${TEXT_COLOR};
+  
+  }
+`;
+
+const Gapppp = styled.div`
+  height: 300px;
+`;
+
+const StyledApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: auto;
 `;
 
 const mapStateToProps = (state) => {
