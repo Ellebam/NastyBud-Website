@@ -39,7 +39,7 @@ class Footer extends React.Component {
                 icon='google plus g'
               />
               <StyledBrandButton circular color='green' inverted icon='phone' />
-              <StyledBrandButton circular color='white' inverted icon='mail' />
+              <StyledBrandButton circular inverted icon='mail' />
             </Container>
             <MainIconContainer>
               <Icon size='huge' name='studiovinari' inverted />

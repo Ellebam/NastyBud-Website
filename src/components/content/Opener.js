@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Segment, Image } from 'semantic-ui-react';
+import TeaserBanner from '../TeaserBanner';
 
 class Opener extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class Opener extends React.Component {
           src='https://picsum.photos/900/400?random=1'
         />
 
-        <Segment>Slider 1</Segment>
+        <TeaserBanner />
         <Segment>Slider 2</Segment>
         <Segment>Slider 3</Segment>
         <Segment>Slider 4</Segment>
