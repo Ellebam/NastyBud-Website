@@ -4,6 +4,7 @@ import { screenResize, showSidebar, hideSidebar } from '../actions';
 import styled from 'styled-components';
 
 import { TEXT_COLOR } from '../theme/colors';
+import { ClothingContent } from './content/ClothingContent';
 
 class Header extends React.Component {
   toggleSidebar = () => {
@@ -18,7 +19,9 @@ class Header extends React.Component {
     return (
       <div className='ui container'>
         <a className=' right item '> Home</a>
+
         <a className=' right item'> Garments</a>
+
         <a className=' right item'> MMF</a>
         <a className=' right item'> Blog</a>
         <a className=' right item'> Story</a>

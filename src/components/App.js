@@ -1,6 +1,7 @@
 import { Sidebar, Segment, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import { hideSidebar, showSidebar } from '../actions';
 import { PRIMARY_COLOR, TEXT_COLOR } from '../theme/colors';
@@ -21,6 +22,7 @@ const App = ({ sidebarVisible, hideSidebar }) => {
         >
           <Header />
           <Opener />
+
           <Gapppp />
           <Footer />
         </StyledPageContainer>

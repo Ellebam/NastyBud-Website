@@ -2,33 +2,36 @@ import React from 'react';
 import styled from 'styled-components';
 import { Reveal, Header, Image } from 'semantic-ui-react';
 
-const TeaserBanner = () => {
+const TeaserBanner = ({ headerText, coverImage, revealedImage }) => {
   return (
-    <div>
-      <StyledHeader as='h2'> Garments</StyledHeader>
+    <StyledDiv>
+      <StyledHeader as='h2'> {headerText}</StyledHeader>
       <StyledReveal animated='move'>
         <StyledRevealedContent visible>
-          <Image src='https://picsum.photos/960/200?random=1?t0' />
+          <Image src={coverImage} />
         </StyledRevealedContent>
         <StyledRevealedContent hidden>
-          <Image src='https://picsum.photos/960/200?random=1?t=1' />
+          <Image src={revealedImage} />
         </StyledRevealedContent>
       </StyledReveal>
-    </div>
+    </StyledDiv>
   );
 };
 
 const StyledHeader = styled(Header)`
-  margin-bottom: 0;
+  display: inline;
 `;
 
 const StyledReveal = styled(Reveal)`
-  margin: 0 auto;
-  text-align: center !important;
+  margin: 0 auto; ;
 `;
 
 const StyledRevealedContent = styled(Reveal.Content)`
   width: 100%;
+`;
+
+const StyledDiv = styled.div`
+  margin-top: 50px;
 `;
 
 export default TeaserBanner;

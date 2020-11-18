@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Segment, Image } from 'semantic-ui-react';
+
 import TeaserBanner from '../TeaserBanner';
 
 class Opener extends React.Component {
@@ -13,30 +14,29 @@ class Opener extends React.Component {
           src='https://picsum.photos/900/400?random=1'
         />
 
-        <TeaserBanner />
-        <Segment>Slider 2</Segment>
-        <Segment>Slider 3</Segment>
-        <Segment>Slider 4</Segment>
+        <TeaserBanner
+          headerText='Garments'
+          coverImage='https://picsum.photos/1200/200?random=1?t0'
+          revealedImage='https://picsum.photos/1200/200?random=1?t1'
+        />
 
-        <Segment>Slider 1</Segment>
-        <Segment>Slider 2</Segment>
-        <Segment>Slider 3</Segment>
-        <Segment>Slider 4</Segment>
+        <TeaserBanner
+          headerText='Match My Fit'
+          coverImage='https://picsum.photos/1200/200?random=1?t2'
+          revealedImage='https://picsum.photos/1200/200?random=1?t3'
+        />
 
-        <Segment>Slider 1</Segment>
-        <Segment>Slider 2</Segment>
-        <Segment>Slider 3</Segment>
-        <Segment>Slider 4</Segment>
+        <TeaserBanner
+          headerText='Blog'
+          coverImage='https://picsum.photos/1200/200?random=1?t4'
+          revealedImage='https://picsum.photos/1200/200?random=1?t5'
+        />
 
-        <Segment>Slider 1</Segment>
-        <Segment>Slider 2</Segment>
-        <Segment>Slider 3</Segment>
-        <Segment>Slider 4</Segment>
-
-        <Segment>Slider 1</Segment>
-        <Segment>Slider 2</Segment>
-        <Segment>Slider 3</Segment>
-        <Segment>last slider</Segment>
+        <TeaserBanner
+          headerText='Story'
+          coverImage='https://picsum.photos/1200/200?random=1?t6'
+          revealedImage='https://picsum.photos/1200/200?random=1?t7'
+        />
       </div>
     );
   }
