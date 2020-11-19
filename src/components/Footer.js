@@ -57,9 +57,9 @@ class Footer extends React.Component {
 }
 
 const StickyFooterContainer = styled.div`
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  flex: 1;
+  flex: 0;
   width: 100%;
   background: #000000;
 `;

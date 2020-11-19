@@ -9,36 +9,49 @@ import Header from './Header';
 import SidebarContainer from './SidebarContainer';
 import Footer from './Footer';
 import Opener from './content/Opener';
+import MMFContent from './content/MMFContent';
+import ClothingContent from './content/ClothingContent';
+import BlogContent from './content/BlogContent';
+import StoryContent from './content/StoryContent';
 
 const App = ({ sidebarVisible, hideSidebar }) => {
   return (
     <StyledApp>
-      <Sidebar.Pushable>
-        <SidebarContainer />
+      <BrowserRouter>
+        <StyledSidebarPushable>
+          <SidebarContainer />
+          <StyledPageContainer
+            onClick={() => (sidebarVisible ? hideSidebar() : {})}
+            dimmed={sidebarVisible}
+          >
+            <Header />
 
-        <StyledPageContainer
-          onClick={() => (sidebarVisible ? hideSidebar() : {})}
-          dimmed={sidebarVisible}
-        >
-          <Header />
-          <Opener />
+            <Route path='/' exact component={Opener} />
+            <Route path='/clothing' exact component={ClothingContent} />
+            <Route path='/mmf' exact component={MMFContent} />
+            <Route path='/blog' exact component={BlogContent} />
+            <Route path='/story' exact component={StoryContent} />
 
-          <Gapppp />
+            <Gapppp />
+          </StyledPageContainer>{' '}
           <Footer />
-        </StyledPageContainer>
-      </Sidebar.Pushable>
+        </StyledSidebarPushable>{' '}
+      </BrowserRouter>
     </StyledApp>
   );
 };
 
 const StyledPageContainer = styled(Sidebar.Pusher)`
   
- 
-  
+ height: 100hv;
   background: ${PRIMARY_COLOR};
   color: ${TEXT_COLOR};
   
   }
+`;
+
+const StyledSidebarPushable = styled(Sidebar.Pushable)`
+  min-height: 100vh;
 `;
 
 const Gapppp = styled.div`
@@ -48,7 +61,6 @@ const Gapppp = styled.div`
 const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   overflow: auto;
 `;
 
