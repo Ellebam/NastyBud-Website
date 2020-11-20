@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { screenResize, showSidebar, hideSidebar } from '../actions';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { TEXT_COLOR } from '../theme/colors';
-import { ClothingContent } from './content/ClothingContent';
 
 class Header extends React.Component {
   toggleSidebar = () => {
@@ -18,20 +18,34 @@ class Header extends React.Component {
   renderNavAreas = () => {
     return (
       <div className='ui container'>
-        <a className=' right item '> Home</a>
+        <Link to='/' className=' right item '>
+          {' '}
+          Home
+        </Link>
 
-        <a className=' right item'> Garments</a>
+        <Link to='/clothing' className=' right item'>
+          Garments
+        </Link>
 
-        <a className=' right item'> MMF</a>
-        <a className=' right item'> Blog</a>
-        <a className=' right item'> Story</a>
+        <Link to='/mmf' className=' right item'>
+          {' '}
+          MMF
+        </Link>
+        <Link to='/blog' className=' right item'>
+          {' '}
+          Blog
+        </Link>
+        <Link to='/story' className=' right item'>
+          {' '}
+          Story
+        </Link>
       </div>
     );
   };
 
   renderNavMenu = () => {
     return (
-      <div onClick={() => this.toggleSidebar()} className='toc item'>
+      <div onClick={() => this.toggleSidebar()} className='toc right item'>
         <i className='bars icon' />
       </div>
     );
@@ -48,10 +62,13 @@ class Header extends React.Component {
     return (
       <div className='ui container '>
         <StyledHeaderArea className=' ui large secondary  pointing menu'>
-          <a className='left  header item'>
-            RIBBON
-            <i className='studiovinari icon' />
-          </a>
+          <Link to='/'>
+            <a className='left  header item'>
+              RIBBON
+              <i className='studiovinari icon' />
+            </a>
+          </Link>
+
           {this.renderNavigation()}
         </StyledHeaderArea>
       </div>

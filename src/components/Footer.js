@@ -62,6 +62,7 @@ const StickyFooterContainer = styled.div`
   flex: 0;
   width: 100%;
   background: #000000;
+  margin-top: 1em;
 `;
 
 const MainIconContainer = styled.div`

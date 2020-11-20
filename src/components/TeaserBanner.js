@@ -1,25 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Reveal, Header, Image } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
-const TeaserBanner = ({ headerText, coverImage, revealedImage }) => {
+import { TEXT_COLOR } from '../theme/colors';
+
+const TeaserBanner = ({ headerText, coverImage, revealedImage, link }) => {
   return (
-    <StyledDiv>
-      <StyledHeader as='h2'> {headerText}</StyledHeader>
-      <StyledReveal animated='move'>
-        <StyledRevealedContent visible>
-          <Image src={coverImage} />
-        </StyledRevealedContent>
-        <StyledRevealedContent hidden>
-          <Image src={revealedImage} />
-        </StyledRevealedContent>
-      </StyledReveal>
-    </StyledDiv>
+    <Link to={link}>
+      {' '}
+      <StyledDiv>
+        <StyledHeader as='h2'> {headerText}</StyledHeader>
+        <StyledReveal animated='move'>
+          <StyledRevealedContent visible>
+            <Image src={coverImage} />
+          </StyledRevealedContent>
+          <StyledRevealedContent hidden>
+            <Image src={revealedImage} />
+          </StyledRevealedContent>
+        </StyledReveal>
+      </StyledDiv>
+    </Link>
   );
 };
 
 const StyledHeader = styled(Header)`
-  display: inline;
+  color: ${TEXT_COLOR};
 `;
 
 const StyledReveal = styled(Reveal)`

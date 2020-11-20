@@ -10,10 +10,19 @@ import {
 import { faPiedPiperHat } from '@fortawesome/free-brands-svg-icons';
 import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { TEXT_COLOR } from '../theme/colors';
+import { hideSidebar } from '../actions';
 
-const SidebarContainer = ({ visible }) => {
+const SidebarContainer = ({ visible, hideSidebar }) => {
+  const toggleSidebar = () => {
+    if (visible) {
+      hideSidebar();
+      return;
+    }
+  };
+
   return (
     <Sidebar
       as={Menu}
@@ -23,37 +32,52 @@ const SidebarContainer = ({ visible }) => {
       visible={visible}
       width='thin'
     >
-      <Menu.Item as='a'>
-        <StyledIconDiv>
-          <FontAwesomeIcon icon={faHome} size='lg' />
-        </StyledIconDiv>
-        Home
-      </Menu.Item>
+      <Link to='/' onClick={() => toggleSidebar()}>
+        <Menu.Item as='a'>
+          <StyledIconDiv>
+            <FontAwesomeIcon icon={faHome} size='lg' />
+          </StyledIconDiv>
+          Home
+        </Menu.Item>
+      </Link>
 
-      <Menu.Item as='a'>
-        <StyledIconDiv>
-          <FontAwesomeIcon icon={faVestPatches} size='lg' />
-        </StyledIconDiv>
-        Garments
-      </Menu.Item>
-      <Menu.Item as='a'>
-        <StyledIconDiv>
-          <FontAwesomeIcon icon={faPiedPiperHat} size='lg' />
-        </StyledIconDiv>
-        MMF
-      </Menu.Item>
-      <Menu.Item as='a'>
-        <StyledIconDiv>
-          <FontAwesomeIcon icon={faNewspaper} size='lg' />
-        </StyledIconDiv>
-        Blog
-      </Menu.Item>
-      <Menu.Item as='a'>
-        <StyledIconDiv>
-          <FontAwesomeIcon icon={faRibbon} size='lg' rotation={180} />
-        </StyledIconDiv>
-        Story
-      </Menu.Item>
+      <Link to='/clothing' onClick={() => toggleSidebar()}>
+        {' '}
+        <Menu.Item as='a'>
+          <StyledIconDiv>
+            <FontAwesomeIcon icon={faVestPatches} size='lg' />
+          </StyledIconDiv>
+          Garments
+        </Menu.Item>
+      </Link>
+
+      <Link to='/mmf' onClick={() => toggleSidebar()}>
+        <Menu.Item as='a'>
+          <StyledIconDiv>
+            <FontAwesomeIcon icon={faPiedPiperHat} size='lg' />
+          </StyledIconDiv>
+          MMF
+        </Menu.Item>
+      </Link>
+
+      <Link to='/blog' onClick={() => toggleSidebar()}>
+        <Menu.Item as='a'>
+          <StyledIconDiv>
+            <FontAwesomeIcon icon={faNewspaper} size='lg' />
+          </StyledIconDiv>
+          Blog
+        </Menu.Item>
+      </Link>
+
+      <Link to='/story' onClick={() => toggleSidebar()}>
+        {' '}
+        <Menu.Item as='a'>
+          <StyledIconDiv>
+            <FontAwesomeIcon icon={faRibbon} size='lg' rotation={180} />
+          </StyledIconDiv>
+          Story
+        </Menu.Item>
+      </Link>
     </Sidebar>
   );
 };
@@ -67,4 +91,4 @@ const mapStateToProps = (state) => {
   return { visible: state.sidebarVisibility.sidebarVisible };
 };
 
-export default connect(mapStateToProps)(SidebarContainer);
+export default connect(mapStateToProps, { hideSidebar })(SidebarContainer);

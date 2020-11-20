@@ -1,4 +1,4 @@
-import { Sidebar, Segment, Image } from 'semantic-ui-react';
+import { Sidebar } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -25,14 +25,11 @@ const App = ({ sidebarVisible, hideSidebar }) => {
             dimmed={sidebarVisible}
           >
             <Header />
-
             <Route path='/' exact component={Opener} />
             <Route path='/clothing' exact component={ClothingContent} />
             <Route path='/mmf' exact component={MMFContent} />
             <Route path='/blog' exact component={BlogContent} />
             <Route path='/story' exact component={StoryContent} />
-
-            <Gapppp />
           </StyledPageContainer>{' '}
           <Footer />
         </StyledSidebarPushable>{' '}
@@ -43,10 +40,11 @@ const App = ({ sidebarVisible, hideSidebar }) => {
 
 const StyledPageContainer = styled(Sidebar.Pusher)`
   
- height: 100hv;
+  
   background: ${PRIMARY_COLOR};
   color: ${TEXT_COLOR};
-  
+  flex: 1 1 auto;
+  margin-bottom: 20em;
   }
 `;
 
@@ -54,14 +52,9 @@ const StyledSidebarPushable = styled(Sidebar.Pushable)`
   min-height: 100vh;
 `;
 
-const Gapppp = styled.div`
-  height: 300px;
-`;
-
 const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
-  overflow: auto;
 `;
 
 const mapStateToProps = (state) => {
