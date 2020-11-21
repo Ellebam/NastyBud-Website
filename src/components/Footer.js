@@ -4,7 +4,6 @@ import {} from '@fortawesome/free-brands-svg-icons';
 import { Segment, Container, Button, Icon } from 'semantic-ui-react';
 
 import spaceBackground from '../img/outerspace-52.gif';
-import './Footer.css';
 
 class Footer extends React.Component {
   render() {
@@ -62,7 +61,6 @@ const StickyFooterContainer = styled.div`
   flex: 0;
   width: 100%;
   background: #000000;
-  margin-top: 1em;
 `;
 
 const MainIconContainer = styled.div`

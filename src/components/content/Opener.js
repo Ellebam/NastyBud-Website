@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Segment, Image } from 'semantic-ui-react';
+import StyledHeroImage from '../StyledHeroImage';
 
 import TeaserBanner from '../TeaserBanner';
 
@@ -8,11 +7,7 @@ class Opener extends React.Component {
   render() {
     return (
       <div className='ui container '>
-        <StyledHeroImage
-          fluid
-          rounded
-          src='https://picsum.photos/900/400?random=1'
-        />
+        <StyledHeroImage source='https://picsum.photos/1200/600?random=1' />
 
         <TeaserBanner
           headerText='Garments'
@@ -45,9 +40,5 @@ class Opener extends React.Component {
     );
   }
 }
-
-const StyledHeroImage = styled(Image)`
-  margin-top: 0.5em;
-`;
 
 export default Opener;

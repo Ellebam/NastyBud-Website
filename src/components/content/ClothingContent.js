@@ -1,20 +1,18 @@
 import React from 'react';
-import { Segment } from 'semantic-ui-react';
+import styled from 'styled-components';
+import { Container, Segment } from 'semantic-ui-react';
+
+import StyledHeroImage from '../StyledHeroImage';
+import PreviewSlider from '../PreviewSlider';
 
 const ClothingContent = () => {
   return (
-    <div className='ui container'>
-      <Segment>
-        <p>
-          {' '}
-          GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ
-          GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ
-          GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ
-          GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ
-          GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ GARMENTZ
-          GARMENTZ
-        </p>
-      </Segment>
+    <div>
+      {' '}
+      <div className='ui container'>
+        <StyledHeroImage source='https://picsum.photos/1200/600?random=11' />
+      </div>
+      <PreviewSlider />
     </div>
   );
 };
