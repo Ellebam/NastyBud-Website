@@ -12,7 +12,7 @@ const ClothingContent = () => {
       <div className='ui container'>
         <StyledHeroImage source='https://picsum.photos/1200/600?random=11' />
       </div>
-      <PreviewSlider />
+      <PreviewSlider /*INSERT DATA OBJECT HERE!*/ />
     </div>
   );
 };
