@@ -1,5 +1,5 @@
 {
-    "Season One":[
+    "seasonOne":[
         
             {   
                 "id": "0",
@@ -16,7 +16,7 @@
                 "name": "Orange Space",
                 "type": "Shirt",
                 "color": "Orange",
-                "description": "Imagine a sunset at a warm summer night transformed into a piece of exquisite clothing.",
+                "description": "Imagine a sunset  transformed into a piece of exquisite clothing.",
                 "imageUrlFull" : "https://picsum.photos/500/500?random?t2",
                 "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t2"
 
@@ -46,7 +46,7 @@
                 "name": "Ancient Gray",
                 "type": "Shirt",
                 "color": "Gray",
-                "description": "Shades may not be colors, but they might bewitch you in other ways. Don't be afraid to try new ways.",
+                "description": "Shades may not be colors, but they might bewitch you in other ways.",
                 "imageUrlFull" : "https://picsum.photos/500/500?random?t5",
                 "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t5"
 
@@ -65,7 +65,7 @@
 
         ],
 
-        "Season Two":[
+        "seasonTwo":[
         
             {   
                 "id": "6",
