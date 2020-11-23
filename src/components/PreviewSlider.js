@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { animated, useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
-import { Card, Header } from 'semantic-ui-react';
+import { Card, Header, Button } from 'semantic-ui-react';
 
 import { TEXT_COLOR } from '../theme/colors';
 
 const PreviewSlider = ({ data, headerName }) => {
+  const ref = useRef();
+
   /**
    * function for setting the default rotation parameters of the used cards
    * @param style dynamic styling object given out by useSpring after transformation
@@ -24,6 +26,11 @@ const PreviewSlider = ({ data, headerName }) => {
       } deg)`,
     });
   });
+
+  const scroll = (scrollOffset) => {
+    ref.current.scrollLeft += scrollOffset;
+    console.log('scrolling!');
+  };
 
   const renderSliderContent = (data) => {
     return data.map((item) => {
@@ -48,9 +55,27 @@ const PreviewSlider = ({ data, headerName }) => {
           {' '}
           {headerName}
         </Header>
-        <StyledContainer {...bind()}>
+        <StyledContainer {...bind()} ref={ref}>
           {renderSliderContent(data)}
+
+          <StyledButtonContainer></StyledButtonContainer>
         </StyledContainer>
+        <Button
+          circular
+          icon='chevron  left'
+          basic
+          inverted
+          color='purple'
+          onClick={() => scroll(-200)}
+        />
+        <Button
+          circular
+          icon='chevron  right'
+          basic
+          inverted
+          color='purple'
+          onClick={() => scroll(200)}
+        />
       </StyledBanner>
     </div>
   );
@@ -69,16 +94,20 @@ const clamp = (value, clampAt = 30) => {
   }
 };
 
+const StyledButtonContainer = styled.div`
+  display: block;
+`;
 const StyledCard = styled(Card)`
   flex-shrink: 0;
 
-  margin: 10px 15px 30px 15px !important;
+  margin: 25px 15px 30px 15px !important;
 `;
 
 const StyledContainer = styled.div`
   display: flex;
   overflow-x: scroll;
   width: 100%;
+  scroll-behavior: smooth;
 `;
 
 const StyledBanner = styled.div`
@@ -87,5 +116,7 @@ const StyledBanner = styled.div`
   padding: 1em;
   padding-right: 2em;
   background: #000000;
+  overflow-x: scroll;
+  text-align: center;
 `;
 export default PreviewSlider;
