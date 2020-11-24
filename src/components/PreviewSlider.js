@@ -5,6 +5,7 @@ import { useScroll } from 'react-use-gesture';
 import { Card, Header, Button } from 'semantic-ui-react';
 
 import { TEXT_COLOR } from '../theme/colors';
+import { extractImgFromDir } from '../HelperFunctions';
 
 const PreviewSlider = ({ data, headerName }) => {
   const ref = useRef();
@@ -26,10 +27,17 @@ const PreviewSlider = ({ data, headerName }) => {
       } deg)`,
     });
   });
-
+  /**
+   * Function for scrolling with controls (e.g. Buttons)
+   * @param {Number} scrollOffset determining how many pixels should be scrolled
+   */
   const scroll = (scrollOffset) => {
     ref.current.scrollLeft += scrollOffset;
     console.log('scrolling!');
+  };
+
+  const findGalleryDir = (dataItem) => {
+    return dataItem.galleryDirectory;
   };
 
   const renderSliderContent = (data) => {
@@ -40,8 +48,11 @@ const PreviewSlider = ({ data, headerName }) => {
             key={item.id}
             header={item.name}
             image={item.imageUrlFull}
-            meta={`${item.color}` + ' ' + `${item.type}`}
+            meta={`${item.color}` + ` ` + `${item.type}`}
             description={item.description}
+            onClick={() => {
+              console.log(findGalleryDir(item));
+            }}
           />
         </animated.div>
       );
@@ -62,7 +73,7 @@ const PreviewSlider = ({ data, headerName }) => {
         </StyledContainer>
         <Button
           circular
-          icon='chevron  left'
+          icon='chevron left'
           basic
           inverted
           color='purple'
@@ -70,7 +81,7 @@ const PreviewSlider = ({ data, headerName }) => {
         />
         <Button
           circular
-          icon='chevron  right'
+          icon='chevron right'
           basic
           inverted
           color='purple'

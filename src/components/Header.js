@@ -63,10 +63,10 @@ class Header extends React.Component {
       <div className='ui container '>
         <StyledHeaderArea className=' ui large secondary  pointing menu'>
           <Link to='/'>
-            <a className='left  header item'>
+            <div className='left  header item'>
               RIBBON
               <i className='studiovinari icon' />
-            </a>
+            </div>
           </Link>
 
           {this.renderNavigation()}
