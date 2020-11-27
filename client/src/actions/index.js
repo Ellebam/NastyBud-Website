@@ -1,4 +1,4 @@
-import { HIDE, SCREEN_RESIZE, SHOW } from './types';
+import { HIDE, SCREEN_RESIZE, SHOW, FETCH } from './types';
 
 export const screenResize = (width) => {
   return {
@@ -15,6 +15,13 @@ export const showSidebar = () => {
 };
 
 export const hideSidebar = () => {
+  return {
+    type: HIDE,
+    payload: {},
+  };
+};
+
+export const fetchAPIData = () => {
   return {
     type: HIDE,
     payload: {},
