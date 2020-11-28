@@ -7,7 +7,7 @@ import { Card, Header, Button } from 'semantic-ui-react';
 import { TEXT_COLOR } from '../theme/colors';
 import { extractImgFromDir } from '../HelperFunctions';
 
-const PreviewSlider = ({ data, headerName, fetchAPIData }) => {
+const PreviewSlider = ({ data, headerName, fetchAPIData, clothingImages }) => {
   const ref = useRef();
 
   /**
@@ -39,11 +39,12 @@ const PreviewSlider = ({ data, headerName, fetchAPIData }) => {
     return dataItem.galleryDirectory;
   };
 
-  const renderSliderContent = (data, clothingImages, fetchAPIData) => {
+  const renderSliderContent = (data, fetchAPIData, clothingImages) => {
     return data.map((item) => {
       return (
         <animated.div style={{ ...style }}>
           <StyledCard
+            //onClick={fetchAPIData()}
             key={item.id}
             header={item.name}
             image={item.imageUrlFull}
@@ -51,10 +52,6 @@ const PreviewSlider = ({ data, headerName, fetchAPIData }) => {
             description={
               clothingImages
               //item.description
-            }
-            onClick={
-              () => fetchAPIData()
-              // extractImgFromDir(findGalleryDir(item)); //THIS NEEDS REWORKING !!
             }
           />
         </animated.div>
@@ -70,9 +67,7 @@ const PreviewSlider = ({ data, headerName, fetchAPIData }) => {
           {headerName}
         </Header>
         <StyledContainer {...bind()} ref={ref}>
-          {renderSliderContent(data, fetchAPIData)}
-
-          <StyledButtonContainer></StyledButtonContainer>
+          {renderSliderContent(data, fetchAPIData, clothingImages)}
         </StyledContainer>
         <Button
           circular
@@ -108,9 +103,6 @@ const clamp = (value, clampAt = 30) => {
   }
 };
 
-const StyledButtonContainer = styled.div`
-  display: block;
-`;
 const StyledCard = styled(Card)`
   flex-shrink: 0;
 

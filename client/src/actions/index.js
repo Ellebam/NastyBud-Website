@@ -23,7 +23,7 @@ export const hideSidebar = () => {
 
 export const fetchAPIData = () => {
   return {
-    type: HIDE,
+    type: FETCH,
     payload: {},
   };
 };
