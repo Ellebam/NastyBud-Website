@@ -27,7 +27,7 @@ export const fetchAPIData = () => {
     const response = await backendServer.get('/testAPI');
     dispatch({
       type: FETCH,
-      payload: response,
+      payload: response.data[4],
     });
   };
 };

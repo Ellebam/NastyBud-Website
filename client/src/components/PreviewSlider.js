@@ -7,7 +7,7 @@ import { Card, Header, Button } from 'semantic-ui-react';
 import { TEXT_COLOR } from '../theme/colors';
 import { extractImgFromDir } from '../HelperFunctions';
 
-const PreviewSlider = ({ data, headerName, fetchAPIData, clothingImages }) => {
+const PreviewSlider = ({ data, headerName, clothingImages }) => {
   const ref = useRef();
 
   /**
@@ -39,7 +39,7 @@ const PreviewSlider = ({ data, headerName, fetchAPIData, clothingImages }) => {
     return dataItem.galleryDirectory;
   };
 
-  const renderSliderContent = (data, fetchAPIData, clothingImages) => {
+  const renderSliderContent = (data, clothingImages) => {
     return data.map((item) => {
       return (
         <animated.div style={{ ...style }}>
@@ -67,7 +67,7 @@ const PreviewSlider = ({ data, headerName, fetchAPIData, clothingImages }) => {
           {headerName}
         </Header>
         <StyledContainer {...bind()} ref={ref}>
-          {renderSliderContent(data, fetchAPIData, clothingImages)}
+          {renderSliderContent(data, clothingImages)}
         </StyledContainer>
         <Button
           circular

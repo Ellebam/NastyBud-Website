@@ -75,8 +75,7 @@ const StyledParagraph = styled.p`
   color: #f2f2f2;
 `;
 let footerStyle = {
-  backgroundImage: `url(${spaceBackground})`,
-  backgroundRepeat: 'repeat - x',
+  background: '#000000',
   textAlign: 'center',
 };
 

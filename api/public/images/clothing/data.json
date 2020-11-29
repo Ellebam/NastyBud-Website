@@ -1,0 +1,135 @@
+    {
+    "seasonOne":[
+        
+            {   
+                "id": "0",
+                "name": "Blue Coral",
+                "type": "Shirt",
+                "color": "Blue",
+                "description": "Diving into the unknown depths of the oceans, this shirt will keep you safe.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t1",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t1",
+                "galleryDirectory" : "/src/img/clothing/seasonOne/1/gallery"
+
+            },
+            {
+                "id":"1",
+                "name": "Orange Space",
+                "type": "Shirt",
+                "color": "Orange",
+                "description": "Imagine a sunset  transformed into a piece of exquisite clothing.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t2",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t2",
+                "galleryDirectory" : "/src/img/clothing/seasonOne/1/gallery"
+
+            },
+            {
+                "id":"2",
+                "name": "White Smoke",
+                "type": "Shirt",
+                "color": "White",
+                "description": "Don't mistake a chilled soul with a cold heart, my dear.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t3",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t3"
+
+            },
+            {
+                "id":"3",
+                "name": "Black Mamba",
+                "type": "Shirt",
+                "color": "Black",
+                "description": "Classic, elegant, definitive. A fine adding to a smoking's attire inside the closet.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t4",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t4"
+
+            },
+            {
+                "id":"4",
+                "name": "Ancient Gray",
+                "type": "Shirt",
+                "color": "Gray",
+                "description": "Shades may not be colors, but they might bewitch you in other ways.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t5",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t5"
+
+            },
+            {
+                "id":"5",
+                "name": "Green Leaf",
+                "type": "Shirt",
+                "color": "Green",
+                "description": "Mother nature has chosen you to represent her infinite swag.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t6",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t6"
+
+            }
+
+
+        ],
+
+        "seasonTwo":[
+        
+            {   
+                "id": "6",
+                "name": "Blue Corallo",
+                "type": "Shirt",
+                "color": "Blue",
+                "description": "Diving into the unknown depths of the oceans, this shirt will keep you safe.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t1",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t1"
+
+            },
+            {
+                "id":"7",
+                "name": "Orange SpaceO",
+                "type": "Shirt",
+                "color": "Orange",
+                "description": "Imagine a sunset at a warm summer night transformed into a piece of exquisite clothing.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t2",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t2"
+
+            },
+            {
+                "id":"8",
+                "name": "White SmokeO",
+                "type": "Shirt",
+                "color": "White",
+                "description": "Don't mistake a chilled soul with a cold heart, my dear.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t3",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t3"
+
+            },
+            {
+                "id":"9",
+                "name": "Black MambaO",
+                "type": "Shirt",
+                "color": "Black",
+                "description": "Classic, elegant, definitive. A fine adding to a smoking's attire inside the closet.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t4",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t4"
+
+            },
+            {
+                "id":"10",
+                "name": "Ancient Grayoooooo",
+                "type": "Shirt",
+                "color": "Gray",
+                "description": "Shades may not be colors, but they might bewitch you in other ways. Don't be afraid to try new ways.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t5",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t5"
+
+            },
+            {
+                "id":"11",
+                "name": "Green LeafO",
+                "type": "Shirt",
+                "color": "Green",
+                "description": "Mother nature has chosen you to represent her infinite swag.",
+                "imageUrlFull" : "https://picsum.photos/500/500?random?t6",
+                "imageUrlThumbnail" : "https://picsum.photos/500/500?random?t6"
+
+            }
+
+
+        ]
+}

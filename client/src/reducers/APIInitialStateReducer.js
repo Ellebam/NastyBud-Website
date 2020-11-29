@@ -13,13 +13,3 @@ export default (state = INITIAL_STATE, action) => {
       return state;
   }
 };
-
-const fetchData = () => {
-  let response = '';
-
-  fetch('hhtp://localhost:9000/testAPI').then((res) =>
-    res.text().then((data) => (response = data))
-  );
-  console.log(response);
-  return response;
-};
