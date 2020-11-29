@@ -44,7 +44,7 @@ const PreviewSlider = ({ data, headerName, fetchAPIData, clothingImages }) => {
       return (
         <animated.div style={{ ...style }}>
           <StyledCard
-            //onClick={fetchAPIData()}
+            onClick={fetchAPIData}
             key={item.id}
             header={item.name}
             image={item.imageUrlFull}

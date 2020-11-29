@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import StyledHeroImage from '../StyledHeroImage';
 import PreviewSlider from '../PreviewSlider';
 import { fetchAPIData } from '../../actions';
-import { Button } from 'semantic-ui-react';
 
 const ClothingContent = ({ clothingData, clothingImages, fetchAPIData }) => {
   return (
@@ -12,7 +11,6 @@ const ClothingContent = ({ clothingData, clothingImages, fetchAPIData }) => {
       {' '}
       <div className='ui container'>
         <StyledHeroImage source='https://picsum.photos/1200/600?random=11' />
-        <Button onClick={() => fetchAPIData()} /*HERE!*/ />
       </div>
       <PreviewSlider
         data={clothingData.seasonOne}

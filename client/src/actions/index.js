@@ -1,4 +1,5 @@
 import { HIDE, SCREEN_RESIZE, SHOW, FETCH } from './types';
+import backendServer from '../apis/backendServer';
 
 export const screenResize = (width) => {
   return {
@@ -22,8 +23,11 @@ export const hideSidebar = () => {
 };
 
 export const fetchAPIData = () => {
-  return {
-    type: FETCH,
-    payload: {},
+  return async (dispatch, getState) => {
+    const response = await backendServer.get('/testAPI');
+    dispatch({
+      type: FETCH,
+      payload: response,
+    });
   };
 };
