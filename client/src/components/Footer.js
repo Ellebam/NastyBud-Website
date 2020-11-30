@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import {} from '@fortawesome/free-brands-svg-icons';
 import { Segment, Container, Button, Icon } from 'semantic-ui-react';
 
-import spaceBackground from '../img/outerspace-52.gif';
-
 class Footer extends React.Component {
   render() {
     return (
