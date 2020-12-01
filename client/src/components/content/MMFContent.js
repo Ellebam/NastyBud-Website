@@ -5,9 +5,10 @@ import StyledHeroImage from '../StyledHeroImage';
 import PreviewSlider from '../PreviewSlider';
 import { fetchContentAPIData } from '../../actions';
 
-const MMFContent = ({ fetchContentAPIData }) => {
+const MMFContent = ({ data, dataStatus, fetchContentAPIData }) => {
+  const route = '/MMFData';
   useEffect(() => {
-    fetchContentAPIData();
+    fetchContentAPIData(route);
   }, []);
 
   return (
@@ -16,20 +17,29 @@ const MMFContent = ({ fetchContentAPIData }) => {
       <div className='ui container'>
         <StyledHeroImage source='https://picsum.photos/1200/600?random=11' />
       </div>
-      {/*
-        <PreviewSlider
-        data={clothingData.seasonOne}
-        clothingImages={clothingImages}
-        fetchAPIData={fetchAPIData}
-        headerName='Volume One'
-      /> */}
+      {renderContent(dataStatus, data)}
     </div>
   );
 };
 
+const renderContent = (dataStatus, data) => {
+  if (dataStatus.isLoaded) {
+    return (
+      <PreviewSlider
+        data={data.vol1}
+        fetchContentAPIData={fetchContentAPIData}
+        headerName='Volume One'
+      />
+    );
+  } else {
+    return;
+  }
+};
+
 const mapStateToProps = (state) => {
   return {
-    data: state.MMFData,
+    dataStatus: state.MMFStatus,
+    data: state.MMFStatus.MMFData,
   };
 };
 export default connect(mapStateToProps, { fetchContentAPIData })(MMFContent);

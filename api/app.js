@@ -8,7 +8,7 @@ var cors = require('cors'); //imported for cross-origin requests
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var testAPIRouter = require('./routes/testAPI'); //added for testing
+var mmfRouter = require('./routes/mmfdata'); //added for testing
 
 var app = express();
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.use('/testAPI', testAPIRouter); //added for testing
+app.use('/MMFData', mmfRouter); //added for testing
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

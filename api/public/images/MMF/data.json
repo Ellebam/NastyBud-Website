@@ -1,4 +1,6 @@
-    {
+
+    
+        {
     "vol1":[
         
             {   
@@ -25,7 +27,7 @@
             },
             {
                 "id":"2",
-                "name": "CHapter 3",
+                "name": "Chapter 3",
                 "partner": "jiaweijerome",
                 "theme": "Hooded",
                 "description": "Don't mistake a chilled soul with a cold heart, my dear.",
@@ -65,7 +67,8 @@
             }
 
 
-        ],
+        ]
+    ,
 
         "seasonTwo":[
         
@@ -133,3 +136,4 @@
 
         ]
 }
+   

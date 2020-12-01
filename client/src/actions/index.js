@@ -29,14 +29,14 @@ export const hideSidebar = () => {
   };
 };
 
-export const fetchContentAPIData = () => {
+export const fetchContentAPIData = (route) => {
   return async (dispatch, getState) => {
     dispatch({
       type: REQUEST_CONTENT_DATA,
     });
     console.log('working');
     try {
-      const response = await backendServer.get('/testAPI');
+      const response = await backendServer.get(route);
       dispatch({
         type: RECEIVE_CONTENT_DATA,
         MMFData: response.data,

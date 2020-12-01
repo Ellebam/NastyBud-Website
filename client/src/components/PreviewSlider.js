@@ -7,7 +7,7 @@ import { Card, Header, Button } from 'semantic-ui-react';
 import { TEXT_COLOR } from '../theme/colors';
 import { extractImgFromDir } from '../HelperFunctions';
 
-const PreviewSlider = ({ data, headerName, clothingImages }) => {
+const PreviewSlider = ({ data, headerName }) => {
   const ref = useRef();
 
   /**
@@ -39,20 +39,22 @@ const PreviewSlider = ({ data, headerName, clothingImages }) => {
     return dataItem.galleryDirectory;
   };
 
-  const renderSliderContent = (data, clothingImages) => {
+  const renderSliderContent = (data) => {
     return data.map((item) => {
       return (
         <animated.div style={{ ...style }}>
           <StyledCard
-            onClick={fetchAPIData}
             key={item.id}
             header={item.name}
             image={item.imageUrlFull}
-            meta={`${item.color}` + ` ` + `${item.type}`}
-            description={
-              clothingImages
-              //item.description
+            meta={
+              `Theme: ` +
+              `${item.theme}` +
+              `      ` +
+              `Partner: ` +
+              `${item.partner}`
             }
+            description={item.description}
           />
         </animated.div>
       );
@@ -67,7 +69,7 @@ const PreviewSlider = ({ data, headerName, clothingImages }) => {
           {headerName}
         </Header>
         <StyledContainer {...bind()} ref={ref}>
-          {renderSliderContent(data, clothingImages)}
+          {renderSliderContent(data)}
         </StyledContainer>
         <Button
           circular
